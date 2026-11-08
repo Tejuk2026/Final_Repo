@@ -1,0 +1,53 @@
+[root@ip-172-31-19-182 mumbai_git]# history
+    1  exit
+    2  yum install git -y
+    3  which git
+    4  git --version
+    5  git config --global user.name "sai"
+    6  git config --glbal user.email "tejukluck@gmail.com"
+    7  git config --list
+    8  git config --global user.email "tejukluck@gmail.com"
+    9  git config --list
+   10  mkdir mumbai_git
+   11  ls
+   12  cd mumbai_git/
+   13  ls -a
+   14  git init
+   15  ls -a
+   16  cat > myfile
+   17  cat  myfile
+   18  git status
+   19  git add .
+   20  git status
+   21  git commit -m "first commit"
+   22  git log
+   23  git status
+   24  git log --oneline
+   25  git show 0149074cf770fac22b1da69d3901f221ae9cfe43
+   26  git remote add origin https://github.com/Tejuk2026/Final_Repo.git
+   27  git branch
+   28  git remote -v
+   29  git branch -M main
+   30  git branch
+   31  git push origin main
+   32  vi myfile
+   33  cat myfile
+   34  git status
+   35  git log
+   36  git add .
+   37  git status
+   38  git commit -m "second commit"
+   39  git status
+   40  git log
+   41  git push origin main
+   42  git ls
+   43  git status
+   44  ls
+   45  cat myfile
+   46  git commit
+   47  git log
+   48  git pull origin main
+   49  git status
+   50  git log
+   51  history
+[root@ip-172-31-19-182 mumbai_git]#
