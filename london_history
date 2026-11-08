@@ -1,0 +1,43 @@
+[root@ip-172-31-31-224 london_git]# history
+    1  yum install git -y
+    2  which git
+    3  git --version
+    4  git config --global user.name "hari"
+    5  git config --global user.email "hari@gmail.com"
+    6  git cofig --list
+    7  git --list
+    8  git config --list
+    9  ls
+   10  mkdir londong_git
+   11  rm -rf londong_git
+   12  ls
+   13  mkdir london_git
+   14  ls
+   15  cd london_git/
+   16  git init
+   17  ls -a
+   18  git config --list
+   19  git remote add origin https://github.com/Tejuk2026/Final_Repo.git
+   20  git remote -v
+   21  ls
+   22  git pull origin main
+   23  ls
+   24  cat myfile
+   25  git branch
+   26  git branch -M main
+   27  ls
+   28  git branch
+   29  ls
+   30  git status
+   31  git log
+   32  vi myfile
+   33  git status
+   34  git add .
+   35  ls
+   36  git status
+   37  git commit -m "third commit"
+   38  git status
+   39  git log
+   40  git push origin main
+   41  ls
+   42  history
