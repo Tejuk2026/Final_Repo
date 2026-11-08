@@ -1,0 +1,162 @@
+[root@ip-172-31-31-224 ~]# which git
+/usr/bin/git
+[root@ip-172-31-31-224 ~]# git --version
+git version 2.50.1
+[root@ip-172-31-31-224 ~]# git config --global user.name "hari"
+[root@ip-172-31-31-224 ~]# git config --global user.email "hari@gmail.com"
+[root@ip-172-31-31-224 ~]# git cofig --list
+git: 'cofig' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+[root@ip-172-31-31-224 ~]# git --list
+unknown option: --list
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+[root@ip-172-31-31-224 ~]# git config --list
+user.name=hari
+user.email=hari@gmail.com
+[root@ip-172-31-31-224 ~]#
+[root@ip-172-31-31-224 ~]# ls
+[root@ip-172-31-31-224 ~]# mkdir londong_git
+[root@ip-172-31-31-224 ~]# rm -rf londong_git
+[root@ip-172-31-31-224 ~]# ls
+[root@ip-172-31-31-224 ~]# mkdir london_git
+[root@ip-172-31-31-224 ~]# ls
+london_git
+[root@ip-172-31-31-224 ~]# cd london_git/
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /root/london_git/.git/
+[root@ip-172-31-31-224 london_git]# ls -a
+.  ..  .git
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# git config --list
+user.name=hari
+user.email=hari@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# git remote add origin https://github.com/Tejuk2026/Final_Repo.git
+[root@ip-172-31-31-224 london_git]# git remote -v
+origin  https://github.com/Tejuk2026/Final_Repo.git (fetch)
+origin  https://github.com/Tejuk2026/Final_Repo.git (push)
+[root@ip-172-31-31-224 london_git]# ls
+[root@ip-172-31-31-224 london_git]# git pull origin main
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 438 bytes | 438.00 KiB/s, done.
+From https://github.com/Tejuk2026/Final_Repo
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+[root@ip-172-31-31-224 london_git]# ls
+myfile
+[root@ip-172-31-31-224 london_git]# cat myfile
+first line from mumbai
+second line from mumbai
+[root@ip-172-31-31-224 london_git]# git branch
+* master
+[root@ip-172-31-31-224 london_git]# git branch -M main
+[root@ip-172-31-31-224 london_git]# ls
+myfile
+[root@ip-172-31-31-224 london_git]# git branch
+* main
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# ls
+myfile
+[root@ip-172-31-31-224 london_git]# git status
+On branch main
+nothing to commit, working tree clean
+[root@ip-172-31-31-224 london_git]# git log
+commit 68b6e646506c7c6db441b60810fd3c868e67421c (HEAD -> main, origin/main)
+Author: sai <tejukluck@gmail.com>
+Date:   Sun Nov 8 16:05:47 2026 +0000
+
+    second commit
+
+commit 0149074cf770fac22b1da69d3901f221ae9cfe43
+Author: sai <tejukluck@gmail.com>
+Date:   Sun Nov 8 15:42:12 2026 +0000
+
+    first commit
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# vi myfile
+[root@ip-172-31-31-224 london_git]# git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   myfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# git add .
+[root@ip-172-31-31-224 london_git]# ls
+myfile
+[root@ip-172-31-31-224 london_git]# git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   myfile
+
+[root@ip-172-31-31-224 london_git]# git commit -m "third commit"
+[main 995dd3d] third commit
+ 1 file changed, 1 insertion(+)
+[root@ip-172-31-31-224 london_git]# git status
+On branch main
+nothing to commit, working tree clean
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# git push origin main^C
+[root@ip-172-31-31-224 london_git]# git log
+commit 995dd3db32f245a34486e5dbf443ade99061eb07 (HEAD -> main)
+Author: hari <hari@gmail.com>
+Date:   Sun Nov 8 16:23:50 2026 +0000
+
+    third commit
+
+commit 68b6e646506c7c6db441b60810fd3c868e67421c (origin/main)
+Author: sai <tejukluck@gmail.com>
+Date:   Sun Nov 8 16:05:47 2026 +0000
+
+    second commit
+
+commit 0149074cf770fac22b1da69d3901f221ae9cfe43
+Author: sai <tejukluck@gmail.com>
+Date:   Sun Nov 8 15:42:12 2026 +0000
+
+    first commit
+[root@ip-172-31-31-224 london_git]# git push origin main
+Username for 'https://github.com': tejukluck@gmail.com
+Password for 'https://tejukluck%40gmail.com@github.com':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 278 bytes | 278.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Tejuk2026/Final_Repo.git
+   68b6e64..995dd3d  main -> main
+[root@ip-172-31-31-224 london_git]#
+[root@ip-172-31-31-224 london_git]# ls
+myfile
+[root@ip-172-31-31-224 london_git]# history
